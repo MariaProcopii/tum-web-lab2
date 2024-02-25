@@ -6,15 +6,23 @@ Welcome to the Drive Buddy Landing Page! This project showcases a modern and use
 
 ## Screenshots
 
-### Desktop View
+### About Us
 
-![Desktop View](screenshots/desktop.png)
+![image](https://github.com/MariaProcopii/tum-web-lab2/assets/77497709/f99e7cde-e1bd-47ef-ba76-0bde4d1e27db)
 
-### Mobile View
+### FAQ
 
-![Mobile View](screenshots/mobile.png)
+![image](https://github.com/MariaProcopii/tum-web-lab2/assets/77497709/97bad489-01a0-4d22-8801-f90a5e6cfe07)
+![image](https://github.com/MariaProcopii/tum-web-lab2/assets/77497709/c5e974ce-c7f4-4e30-9e10-40d00b4b4d00)
 
-## Features
+## Contact Us
+
+![image](https://github.com/MariaProcopii/tum-web-lab2/assets/77497709/ef29f9e1-e9a7-49db-a1d7-fa438062188f)
+
+## Footer
+
+![image](https://github.com/MariaProcopii/tum-web-lab2/assets/77497709/77fb1171-bf4f-4c46-9eed-48d8181542d2)
+
 
 - **User-Friendly Navigation:** The navigation bar provides easy access to key sections like sign-up, about us, FAQ, and contact.
 
@@ -39,25 +47,8 @@ To explore the Drive Buddy landing page:
 - [Google Fonts](https://fonts.google.com/specimen/Roboto)
 - [Font Awesome Icons](https://fontawesome.com/)
 
-## Contributing
-
-We welcome contributions to enhance the Drive Buddy landing page. Feel free to submit issues or pull requests.
-
-## License
-
-This project is licensed under the [License Name] - see the [LICENSE.md](LICENSE.md) file for details.
-
-## Acknowledgments
-
-- Thanks to the contributors for their efforts in creating a visually appealing and informative landing page.
-
 ## Contact
 
 For inquiries or collaboration opportunities, you can reach out to us:
 
-- Email: your.email@example.com
-- Twitter: [@yourTwitterHandle](https://twitter.com/yourTwitterHandle)
-
----
-
-**Note:** Customize this README template according to your project's details, and consider adding more sections or information depending on your specific needs.
+- Email: mari.procopii@gmail.com
