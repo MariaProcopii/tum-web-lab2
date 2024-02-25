@@ -28,7 +28,7 @@
       </li>
       <li>
         <a href="#about-section" target="_blank">
-          <button class="button-1" type="button">About</button>
+          <button class="button-1" type="button">About Us</button>
         </a>
       </li>
       <li>
@@ -55,13 +55,18 @@
         <p>Discover a new way to travel with Drive Buddy! We believe in creating a unified transport
           system that brings people together for shared journeys. By connecting individuals with similar
           destinations, we help them save money, reach their destinations effortlessly, and spend less time
-          worrying about the ride.</p>
+          worrying about the ride.
+        </p>
+
         <p>Whether you're commuting to work, planning a weekend getaway, or embarking on a road trip, Drive
           Buddy is your companion for cost-effective and convenient travel. Say goodbye to the hassle of solo
-          rides and hello to a community-driven approach to transportation.</p>
+          rides and hello to a community-driven approach to transportation.
+        </p>
+
         <p>Join us today and become part of a network of travelers who value efficiency, affordability, and
           the joy of sharing the journey. Find your Drive Buddy and embark on a smoother, more enjoyable
-          travel experience!</p>
+          travel experience!
+        </p>
       </div>
       <div class="about-image">
         <img src="car-intro.png" alt="About Image">
@@ -70,21 +75,99 @@
   </section>
 
   <section id="faq-section">
-    <div class="content">
-      <h2>Frequently Asked Questions</h2>
+    <div class="wrapper">
+      <h1>Frequently Asked Questions</h1>
+
       <div class="faq-item">
-        <h3>Is Drive Buddy service secure?</h3>
-        <p>Yes, Drive Buddy takes security seriously. We employ advanced encryption and security measures
-          to ensure the safety of your data and transactions.</p>
+        <button class="question">
+          Is Drive Buddy service secure?
+          <i class="fa-solid fa-chevron-down"></i>
+        </button>
+        <div class="answer">
+          <p>
+            Yes, Drive Buddy takes security seriously. We employ advanced encryption and security measures
+            to ensure the safety of your data and transactions.
+          </p>
+        </div>
       </div>
+
       <div class="faq-item">
-        <h3>How long do I have to wait for the availability of a car?</h3>
-        <p>The availability of cars depends on various factors, including your location and demand. Drive
-          Buddy aims to provide quick and efficient service, and you can check real-time availability on our
-          platform.</p>
+        <button class="question">
+          How long do I have to wait for the availability of a car?
+          <i class="fa-solid fa-chevron-down"></i>
+        </button>
+        <div class="answer">
+          <p>The availability of cars depends on various factors, including your location and demand. Drive
+            Buddy aims to provide quick and efficient service, and you can check real-time availability on our
+            platform.
+          </p>
+        </div>
       </div>
-      <!-- Add more FAQ items as needed -->
+
+    <div class="faq-item">
+      <button class="question">
+        Do I have to pay for the ride ?
+        <i class="fa-solid fa-chevron-down"></i>
+      </button>
+      <div class="answer">
+        <p>
+          No, you don't have to pay for the ride. However, if you enjoyed the service,
+          feel free to leave a tip to show your appreciation!
+        </p>
+      </div>
     </div>
+
+    <div class="faq-item">
+      <button class="question">
+        Are the drivers background-checked?
+        <i class="fa-solid fa-chevron-down"></i>
+      </button>
+      <div class="answer">
+        <p>
+          Yes, all our drivers undergo thorough background checks to ensure passenger
+          safety.
+        </p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="question">
+        Can I schedule a ride in advance?
+        <i class="fa-solid fa-chevron-down"></i>
+      </button>
+      <div class="answer">
+        <p>
+          Absolutely! You can schedule a ride for a future date and time through
+          the app.
+        </p>
+      </div>
+    </div>
+      <div class="faq-item">
+        <button class="question">
+          Can I bring pets with me during the ride?
+          <i class="fa-solid fa-chevron-down"></i>
+        </button>
+        <div class="answer">
+          <p>
+            Most drivers are pet-friendly, but it's a good practice to check with your
+            driver in advance and use a pet carrier if needed.
+          </p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="question">
+          What happens if I leave something in the car?
+          <i class="fa-solid fa-chevron-down"></i>
+        </button>
+        <div class="answer">
+          <p>
+            You can contact our customer support, and we'll do our best to help you
+            retrieve any items left behind.
+          </p>
+        </div>
+      </div>
+  </div>
   </section>
 
   <section id="contact-section">
@@ -92,7 +175,6 @@
       <h2>Contact Us</h2>
       <p>Have a question or feedback? Reach out to us using the form below:</p>
       <form action="#" method="post">
-        <!-- Add your contact form fields here -->
         <label for="name">Name:</label>
         <input type="text" id="name" name="name" required>
         <label for="email">Email:</label>
@@ -105,31 +187,21 @@
   </section>
 
 </main>
-
-<!--<footer>-->
-<!--  <div class="content">-->
-<!--    <p>&copy; 2024 Find Your Drive Buddy. All rights reserved.</p>-->
-<!--  </div>-->
-<!--</footer>-->
-
 <footer>
   <div class="content">
     <ul>
-      <li><a href="#">Home</a></li>
-      <li><a href="#">About Us</a></li>
-      <li><a href="#">Services</a></li>
-      <li><a href="#">Blog</a></li>
-      <li><a href="#">Contact Us</a></li>
+      <li><a href="#">Sign Up</a></li>
+      <li><a href="#about-section">About Us</a></li>
+      <li><a href="#contact-section">Contact Us</a></li>
+      <li><a href="#faq-section">FAQ</a></li>
       <li><a href="#">Terms of Service</a></li>
       <li><a href="#">Privacy Policy</a></li>
-      <li><a href="#">FAQ</a></li>
     </ul>
     <p>&copy; 2024 Find Your Drive Buddy. All rights reserved.</p>
   </div>
 </footer>
 
 <script>
-  // Smooth scrolling for anchor links
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
       e.preventDefault();
@@ -139,6 +211,26 @@
       });
     });
   });
+</script>
+
+<script>
+  var acc = document.getElementsByClassName("question");
+  var i;
+
+  for (i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function () {
+      this.classList.toggle("active");
+      this.parentElement.classList.toggle("active");
+
+      var pannel = this.nextElementSibling;
+
+      if (pannel.style.display === "block") {
+        pannel.style.display = "none";
+      } else {
+        pannel.style.display = "block";
+      }
+    });
+  }
 </script>
 
 </body>
