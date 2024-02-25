@@ -1,13 +1,23 @@
+:root {
+    --primary-color: #EE5249;
+    --secondary-color: #1A1A1A;
+    --background-light: #F5F5F5;
+    --background-extra-light: #F9F9F9;
+    --text-dark: #333;
+}
+
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Verdana', 'Geneva', 'Tahoma', 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
     background-color: #fff;
-    color: #000;
+    color: var(--text-dark);
+    transition: background-color 0.2s linear;
+    text-transform: capitalize;
 }
 
 header {
-    background-color: #EE5249;
+    background-color: var(--primary-color);
     color: #fff;
     padding: 1rem;
     display: flex;
@@ -16,20 +26,16 @@ header {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.logo img {
+header .logo img {
     width: 100px;
     height: auto;
     border-radius: 15%;
-
 }
 
 nav ul {
     list-style: none;
     display: flex;
-}
-
-nav ul li {
-    margin-right: 20px;
+    gap: 20px;
 }
 
 nav a {
@@ -47,42 +53,32 @@ nav a:hover {
 .button-1 {
     appearance: none;
     background-color: white;
-    border: 2px solid #1A1A1A;
+    border: 2px solid var(--secondary-color);
     border-radius: 15px;
-    box-sizing: border-box;
-    color: #3B3B3B;
+    color: var(--text-dark);
     cursor: pointer;
     display: inline-block;
-    font-family: Roobert, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-family: 'Roboto', sans-serif;
     font-size: 16px;
     font-weight: 600;
     line-height: normal;
-    margin: 0;
-    min-height: 60px;
-    min-width: 0;
     outline: none;
     padding: 16px 24px;
     text-align: center;
     text-decoration: none;
-    transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
+    transition: background-color 0.3s ease, transform 0.3s ease;
     width: 100%;
-    will-change: transform;
 }
 
 .button-1:hover {
-    color: #fff;
-    background-color: #1A1A1A;
-    box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+    background-color: var(--secondary-color);
     transform: translateY(-2px);
 }
 
 .button-1:active {
-    box-shadow: none;
     transform: translateY(0);
 }
+
 main {
     padding: 2rem;
     box-sizing: border-box;
@@ -92,32 +88,13 @@ section {
     margin-bottom: 2rem;
 }
 
-#description {
-    max-width: 100%;
-}
-
-#description h1 {
-    font-size: 2rem;
-}
-
-.description-text {
-    max-width: 70%;
-    margin-right: 20px;
-    margin-bottom: 150px;
-}
-
-.description-image img {
-    max-width: 50%;
-    height: auto;
-}
-
-
 .content {
     max-width: 800px;
+    margin: 0 auto;
 }
 
 h1, h2 {
-    color: #EE5249;
+    color: var(--primary-color);
     font-weight: 700;
 }
 
@@ -127,15 +104,161 @@ h1, h2 {
     text-align: justify;
 }
 
-footer{
-    background-color: #EE5249;
+/* About Section */
+#about-section {
+    background-color: var(--background-light);
+    padding: 2rem;
+}
+
+.about-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.about-text {
+    max-width: 100%;
+    margin-bottom: 2rem;
+}
+
+.about-text h1 {
+    color: var(--primary-color);
+    font-size: 2rem;
+}
+
+.about-image img {
+    max-width: 100%;
+    height: auto;
+}
+
+@media screen and (min-width: 768px) {
+    .about-content {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        text-align: left;
+    }
+
+    .about-text {
+        max-width: 50%;
+    }
+
+    .about-image {
+        max-width: 40%;
+    }
+}
+
+/* FAQ Section */
+#faq-section {
+    background-color: var(--background-light);
+    padding: 2rem;
+}
+
+.faq-item {
+    margin-bottom: 1.5rem;
+}
+
+.faq-item h3 {
+    color: var(--primary-color);
+}
+
+/* Contact Section */
+#contact-section {
+    background-color: var(--background-extra-light);
+    padding: 2rem;
+}
+
+form {
+    max-width: 400px;
+    margin: 0 auto;
+    display: grid;
+    gap: 1rem;
+}
+
+form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--text-dark);
+}
+
+form input,
+form textarea {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+/* Footer */
+footer {
+    background-color: var(--primary-color);
     color: #fff;
     padding: 1rem;
     text-align: center;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
     box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+footer ul li {
+    margin-right: 20px;
+}
+
+footer a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #ddd;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    main {
+        padding: 1rem;
+    }
+
+    .description-text,
+    .description-image img {
+        max-width: 100%;
+        margin-right: 0;
+    }
+
+    footer ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    footer ul li {
+        margin: 10px 0;
+    }
 }
 
 @media screen and (min-width: 768px) {
