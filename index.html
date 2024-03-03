@@ -39,11 +39,19 @@
       </li>
       <li>
         <a href="#contact-section" target="_blank">
-          <button class="button-1" type="button">Contact</button>
+          <button class="button-1" id="call-action-button" type="button">Contact</button>
         </a>
       </li>
     </ul>
   </nav>
+  <div class="hamburger-overlay"></div>
+  <button id="hamburger">
+    <svg width="48px" height="48px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M4 18L20 18" stroke="#000000" stroke-width="2" stroke-linecap="round"/>
+      <path d="M4 12L20 12" stroke="#000000" stroke-width="2" stroke-linecap="round"/>
+      <path d="M4 6L20 6" stroke="#000000" stroke-width="2" stroke-linecap="round"/>
+    </svg>
+  </button>
 </header>
 
 <main>
@@ -105,44 +113,44 @@
         </div>
       </div>
 
-    <div class="faq-item">
-      <button class="question">
-        Do I have to pay for the ride ?
-        <i class="fa-solid fa-chevron-down"></i>
-      </button>
-      <div class="answer">
-        <p>
-          No, you don't have to pay for the ride. However, if you enjoyed the service,
-          feel free to leave a tip to show your appreciation!
-        </p>
+      <div class="faq-item">
+        <button class="question">
+          Do I have to pay for the ride ?
+          <i class="fa-solid fa-chevron-down"></i>
+        </button>
+        <div class="answer">
+          <p>
+            No, you don't have to pay for the ride. However, if you enjoyed the service,
+            feel free to leave a tip to show your appreciation!
+          </p>
+        </div>
       </div>
-    </div>
 
-    <div class="faq-item">
-      <button class="question">
-        Are the drivers background-checked?
-        <i class="fa-solid fa-chevron-down"></i>
-      </button>
-      <div class="answer">
-        <p>
-          Yes, all our drivers undergo thorough background checks to ensure passenger
-          safety.
-        </p>
+      <div class="faq-item">
+        <button class="question">
+          Are the drivers background-checked?
+          <i class="fa-solid fa-chevron-down"></i>
+        </button>
+        <div class="answer">
+          <p>
+            Yes, all our drivers undergo thorough background checks to ensure passenger
+            safety.
+          </p>
+        </div>
       </div>
-    </div>
 
-    <div class="faq-item">
-      <button class="question">
-        Can I schedule a ride in advance?
-        <i class="fa-solid fa-chevron-down"></i>
-      </button>
-      <div class="answer">
-        <p>
-          Absolutely! You can schedule a ride for a future date and time through
-          the app.
-        </p>
+      <div class="faq-item">
+        <button class="question">
+          Can I schedule a ride in advance?
+          <i class="fa-solid fa-chevron-down"></i>
+        </button>
+        <div class="answer">
+          <p>
+            Absolutely! You can schedule a ride for a future date and time through
+            the app.
+          </p>
+        </div>
       </div>
-    </div>
       <div class="faq-item">
         <button class="question">
           Can I bring pets with me during the ride?
@@ -168,7 +176,7 @@
           </p>
         </div>
       </div>
-  </div>
+    </div>
   </section>
 
   <section id="contact-section">
@@ -182,7 +190,7 @@
         <input type="email" id="email" name="email" required>
         <label for="message">Message:</label>
         <textarea id="message" name="message" rows="4" required></textarea>
-        <button class="button-1" type="submit">Submit</button>
+        <button class="button-1" id="submit-button" type="submit">Submit</button>
       </form>
     </div>
   </section>
@@ -203,14 +211,10 @@
 </footer>
 <div id="imageContainer">
   <div id="fixedImage">
-      <img id="mascot-img" src="mascot.jpg" alt="Mascot Image">
+    <img id="mascot-img" src="mascot.jpg" alt="Mascot Image">
   </div>
   <div id="welcomeText">Welcome my dear friend!</div>
 </div>
-<!--<div id="fixedImage" class="animate">-->
-<!--  <img id="mascot-img" src="mascot.jpg" alt="Mascot Image">-->
-<!--</div>-->
-<!--<div id="welcomeText">Welcome my dear friend!</div>-->
 <script>
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
@@ -241,6 +245,36 @@
       }
     });
   }
+</script>
+
+<script>
+  const switchMenuState = () => {
+    const hamburgerElements = document.getElementsByClassName("hamburger-overlay");
+    for (var i = 0; i < hamburgerElements.length; i++) {
+      if (hamburgerElements[i].style.display === "block") {
+        hamburgerElements[i].style.display = "none";
+      } else {
+        hamburgerElements[i].style.display = "block";
+      }
+    }
+
+    const navbarElements = document.getElementsByClassName("navbar");
+    for (var i = 0; i < navbarElements.length; i++) {
+      if (navbarElements[i].style.display === "block") {
+        navbarElements[i].style.display = "none";
+      } else {
+        navbarElements[i].style.display = "block";
+      }
+    }
+  };
+
+  document.getElementById("hamburger").addEventListener("click", switchMenuState);
+
+  const navbarButtons = document.querySelectorAll("body > header > nav > ul > li > a > button");
+  for (var i = 0; i < navbarButtons.length; i++) {
+    navbarButtons[i].addEventListener("click", switchMenuState);
+  }
+
 </script>
 
 </body>
