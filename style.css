@@ -16,6 +16,7 @@ body {
     color: var(--text-dark);
     transition: background-color 0.2s linear;
     text-transform: capitalize;
+    min-width: 390px;
 }
 
 header {
@@ -29,9 +30,10 @@ header {
 }
 
 header .logo img {
-    width: 100px;
+    width: 120px;
     height: auto;
     border-radius: 15%;
+    min-width: 120px;
 }
 
 nav ul {
@@ -70,6 +72,7 @@ nav a:hover {
     text-decoration: none;
     transition: background-color 0.3s ease, transform 0.3s ease;
     width: 100%;
+    min-width: 120px;
 }
 
 .button-1:hover {
@@ -145,10 +148,12 @@ h1, h2 {
 
     .about-text {
         max-width: 50%;
+        min-width: 20%;
     }
 
     .about-image {
         max-width: 40%;
+        min-width: 20%;
     }
 }
 
@@ -195,7 +200,7 @@ form button {
     cursor: pointer;
     border: 1px solid var(--primary-color);
     font-family: 'Roboto', sans-serif;
-    font-size: 14px;  /* Reduce font size */
+    font-size: 14px;
     font-weight: 600;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
@@ -297,6 +302,7 @@ footer a:hover {
 
 .wrapper {
     max-width: 75%;
+    min-width: 30%;
     margin: auto;
 }
 
@@ -345,4 +351,62 @@ footer a:hover {
     border-color: var(--secondary-color);
     border: 1px solid;
     margin: 10px 0;
+}
+
+#imageContainer {
+    position: fixed;
+    bottom: 120px;
+    right: 120px;
+    display: flex;
+    /*flex-direction: column;*/
+    align-items: center;
+}
+
+#fixedImage {
+    position: fixed;
+    bottom: 120px;
+    right: 120px;
+    width: 10px;
+    height: 10px;
+    background-image: url("mascot.jpg");
+    scale: 0.1;
+    background-position: center;
+    animation: fadeIn 6s normal forwards ease-in-out, moveDiagonal 6s linear infinite;
+    z-index: 2;
+}
+
+#mascot-img{
+    border-radius: 20%;
+    border: 15px solid black;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(100px); }
+    100% { opacity: 1; transform: translateY(100px); }
+}
+
+@keyframes moveDiagonal {
+    0% { transform: translate(0, 0); }
+    25% { transform: translate(50px, 50px); }
+    50% { transform: translate(100px, 0); }
+    75% { transform: translate(50px, -50px); }
+    100% { transform: translate(0, 0); }
+}
+
+#welcomeText {
+    position: fixed;
+    bottom: 100px;
+    right: 110px;
+    opacity: 0;
+    background-color:white;
+    border: 1px solid black;
+    border-radius: 15px;
+    padding: 1.2%;
+    font-family: "JetBrains Mono ExtraBold", sans-serif;
+    transition: opacity 1.5s ease-in-out;
+    z-index: 1;
+}
+
+#fixedImage:hover + #welcomeText {
+    opacity: 1;
 }

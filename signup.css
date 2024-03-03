@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.row {
+    display: flex;
+}
+
+.column {
+    flex: 50%;
+}
+
+body {
+    font-family: 'Poppins', sans-serif; /* Correct font-family syntax */
+    background-color: #ECEDEF;
+    color: #fff;
+    line-height: 1.8;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Header Section */
+#photo {
+    width: 30%;
+    float: left;
+    max-width: 100%;
+    margin: 300px auto auto auto;
+}
+
+/* Main Content Section */
+#container {
+    margin: 30px 150px auto auto;
+    max-width: 430px;
+    min-width: 430px;
+    padding: 20px;
+}
+
+.form-wrap {
+    background-color: #fff;
+    padding: 15px 25px;
+    color: #333;
+    border-top: 4px solid #e74c3c;
+    border-radius: 5px;
+}
+
+.form-wrap h1,
+.form-wrap p {
+    text-align: center;
+}
+
+/* Form Styling */
+.form-wrap .form-group {
+    margin-top: 15px;
+}
+
+.form-wrap .form-group label {
+    display: block;
+    color: #666;
+}
+
+.form-wrap .form-group input {
+    width: 100%;
+    padding: 10px;
+    border: #ddd 1px solid;
+    border-radius: 5px;
+}
+
+/* Button Styling */
+.form-wrap button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+    background-color: #e74c3c;
+    color: #fff;
+    cursor: pointer;
+    border: 1px solid #e74c3c;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    transition: 1s;
+}
+
+.form-wrap button:hover {
+    background-color: #e74c3c;
+    transition: 1s;
+}
+
+/* Additional Text Styling */
+.form-wrap .bottom-text {
+    font-size: 13px;
+    margin-top: 20px;
+}
+
+footer {
+    text-align: center;
+    margin-top: 10px;
+    color: #333;
+}
+
+footer a {
+    color: #e74c3c;
+}
