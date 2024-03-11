@@ -7,6 +7,7 @@
   <title>My landing page</title>
 
   <link rel="stylesheet" href="reset.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.5.0/dist/semantic.min.css">
   <link rel="stylesheet" href="style.css" />
   <link rel="icon" href="logo.png" type="image/icon type">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
@@ -24,22 +25,22 @@
     <ul>
       <li>
         <a href="signup.html" target="_blank">
-          <button class="button-1" type="button">Sign up</button>
+          <button class="ui inverted black button" type="button">Sign up</button>
         </a>
       </li>
       <li>
         <a href="#about-section" target="_blank">
-          <button class="button-1" type="button">About Us</button>
+          <button class="ui inverted black button" type="button">About Us</button>
         </a>
       </li>
       <li>
         <a href="#faq-section" target="_blank">
-          <button class="button-1" type="button">FAQ</button>
+          <button class="ui inverted black button" type="button">FAQ</button>
         </a>
       </li>
       <li>
         <a href="#contact-section" target="_blank">
-          <button class="button-1" id="call-action-button" type="button">Contact</button>
+          <button class="ui inverted black button" id="call-action-button" type="button">Contact</button>
         </a>
       </li>
     </ul>
@@ -57,28 +58,31 @@
 <main>
 
   <section id="about-section">
-    <div class="content about-content">
-      <div class="about-text">
-        <h1>Find Your Drive Buddy</h1>
-        <br>
-        <p>Discover a new way to travel with Drive Buddy! We believe in creating a unified transport
-          system that brings people together for shared journeys. By connecting individuals with similar
-          destinations, we help them save money, reach their destinations effortlessly, and spend less time
-          worrying about the ride.
-        </p>
+    <div class="ui celled grid">
+      <div class="row">
+        <div class="ten wide column">
+          <h1>Find Your Drive Buddy</h1>
+          <br>
+          <p>Discover a new way to travel with Drive Buddy! We believe in creating a unified transport
+            system that brings people together for shared journeys. By connecting individuals with similar
+            destinations, we help them save money, reach their destinations effortlessly, and spend less time
+            worrying about the ride.
+          </p>
 
-        <p>Whether you're commuting to work, planning a weekend getaway, or embarking on a road trip, Drive
-          Buddy is your companion for cost-effective and convenient travel. Say goodbye to the hassle of solo
-          rides and hello to a community-driven approach to transportation.
-        </p>
+          <p>Whether you're commuting to work, planning a weekend getaway, or embarking on a road trip, Drive
+            Buddy is your companion for cost-effective and convenient travel. Say goodbye to the hassle of solo
+            rides and hello to a community-driven approach to transportation.
+          </p>
 
-        <p>Join us today and become part of a network of travelers who value efficiency, affordability, and
-          the joy of sharing the journey. Find your Drive Buddy and embark on a smoother, more enjoyable
-          travel experience!
-        </p>
-      </div>
-      <div class="about-image">
-        <img src="car-intro.png" alt="About Image">
+          <p>Join us today and become part of a network of travelers who value efficiency, affordability, and
+            the joy of sharing the journey. Find your Drive Buddy and embark on a smoother, more enjoyable
+            travel experience!
+          </p>
+        </div>
+
+        <div class="five wide column">
+          <img src="car-intro.png" alt="About Image">
+        </div>
       </div>
     </div>
   </section>
@@ -190,25 +194,42 @@
         <input type="email" id="email" name="email" required>
         <label for="message">Message:</label>
         <textarea id="message" name="message" rows="4" required></textarea>
-        <button class="button-1" id="submit-button" type="submit">Submit</button>
+        <button class="ui inverted black button" id="submit-button" type="submit">Submit</button>
       </form>
     </div>
   </section>
 
 </main>
 <footer>
-  <div class="content">
-    <ul>
-      <li><a href="signup.html">Sign Up</a></li>
-      <li><a href="#about-section">About Us</a></li>
-      <li><a href="#contact-section">Contact Us</a></li>
-      <li><a href="#faq-section">FAQ</a></li>
-      <li><a href="#">Terms of Service</a></li>
-      <li><a href="#">Privacy Policy</a></li>
-    </ul>
-    <p>&copy; 2024 Find Your Drive Buddy. All rights reserved.</p>
+  <div class="ui stackable inverted divided equal height stackable grid">
+    <div class="five wide column"></div>
+    <div class="two wide column">
+      <h4 class="ui inverted header">Account</h4>
+      <div class="ui inverted link list">
+        <a href="signup.html" class="item">Sign In</a>
+        <a href="signup.html" class="item">Sign Up</a>
+      </div>
+    </div>
+    <div class="two wide column">
+      <h4 class="ui inverted header">Info</h4>
+      <div class="ui inverted link list">
+        <a href="#about-section" class="item">About us</a>
+        <a href="#contact-section" class="item">Contact us</a>
+        <a href="#faq-section" class="item">FAQ</a>
+      </div>
+    </div>
+    <div class="two wide column">
+      <h4 class="ui inverted header">Policy</h4>
+      <div class="ui inverted link list">
+        <a href="#" class="item">Terms of Service</a>
+        <a href="#" class="item">Privacy Policy</a>
+      </div>
+    </div>
   </div>
+  <div class="ui divider"></div>
+  <p>&copy; 2024 Find Your Drive Buddy. All rights reserved.</p>
 </footer>
+
 <div id="imageContainer">
   <div id="fixedImage">
     <img id="mascot-img" src="mascot.jpg" alt="Mascot Image">
@@ -248,26 +269,49 @@
 </script>
 
 <script>
-  const switchMenuState = () => {
+  const mobileMaxWidth = 768;
+
+  const switchMenuStateToDefault = () => {
     const hamburgerElements = document.getElementsByClassName("hamburger-overlay");
-    for (var i = 0; i < hamburgerElements.length; i++) {
-      if (hamburgerElements[i].style.display === "block") {
+    const navbarElements = document.getElementsByClassName("navbar");
+    if (window.innerWidth > mobileMaxWidth) {
+      for (var i = 0; i < hamburgerElements.length; i++) {
         hamburgerElements[i].style.display = "none";
-      } else {
-        hamburgerElements[i].style.display = "block";
+      }
+
+      for (var i = 0; i < navbarElements.length; i++) {
+        navbarElements[i].style.display = "block";
+      }
+    } else {
+      for (var i = 0; i < navbarElements.length; i++) {
+        navbarElements[i].style.display = "none";
       }
     }
+  }
 
-    const navbarElements = document.getElementsByClassName("navbar");
-    for (var i = 0; i < navbarElements.length; i++) {
-      if (navbarElements[i].style.display === "block") {
-        navbarElements[i].style.display = "none";
-      } else {
-        navbarElements[i].style.display = "block";
+  const switchMenuState = () => {
+    if (window.innerWidth <= mobileMaxWidth) {
+      const hamburgerElements = document.getElementsByClassName("hamburger-overlay");
+      for (var i = 0; i < hamburgerElements.length; i++) {
+        if (hamburgerElements[i].style.display === "block") {
+          hamburgerElements[i].style.display = "none";
+        } else {
+          hamburgerElements[i].style.display = "block";
+        }
+      }
+
+      const navbarElements = document.getElementsByClassName("navbar");
+      for (var i = 0; i < navbarElements.length; i++) {
+        if (navbarElements[i].style.display === "block") {
+          navbarElements[i].style.display = "none";
+        } else {
+          navbarElements[i].style.display = "block";
+        }
       }
     }
   };
 
+  window.addEventListener("resize", switchMenuStateToDefault);
   document.getElementById("hamburger").addEventListener("click", switchMenuState);
 
   const navbarButtons = document.querySelectorAll("body > header > nav > ul > li > a > button");
@@ -276,6 +320,27 @@
   }
 
 </script>
+
+<script>
+  const aboutSectionGrid = document.getElementById("about-section").children[0].children[0];
+  const resizeAboutSectionCallback = () => {
+    if (window.innerWidth <= 1180) {
+      aboutSectionGrid.className = "column";
+      for (var i = 0; i < aboutSectionGrid.children.length; i++) {
+        aboutSectionGrid.children[i].className = "row";
+      }
+    } else {
+      aboutSectionGrid.className = "row";
+      console.log(aboutSectionGrid.children[0]);
+      aboutSectionGrid.children[0].className = "ten wide column";
+      aboutSectionGrid.children[1].className = "five wide column";
+    }
+  };
+
+  window.addEventListener("resize", resizeAboutSectionCallback);
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.5.0/dist/semantic.min.js"></script>
 
 </body>
 
